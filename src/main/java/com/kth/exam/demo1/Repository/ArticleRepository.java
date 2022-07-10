@@ -30,4 +30,13 @@ public class ArticleRepository {
 		lastId = id;
 	}
 
+	public Article getArticle(int id) {
+		for (Article article : articles) {
+			if(article.getId() == id) {
+				return article;
+			}
+		}
+		return null;
+	}
+
 }

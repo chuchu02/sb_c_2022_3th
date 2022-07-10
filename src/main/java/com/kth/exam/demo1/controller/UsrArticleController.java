@@ -22,4 +22,10 @@ public class UsrArticleController {
 	public List<Article> getArticles() {
 		return articleService.getArticles();
 	}
+	
+	@RequestMapping("usr/article/getArticle")
+	@ResponseBody
+	public Article getArticle(int id) {
+		return articleService.getArticle(id);
+	}
 }
