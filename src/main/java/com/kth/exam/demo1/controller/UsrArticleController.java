@@ -28,4 +28,18 @@ public class UsrArticleController {
 	public Article getArticle(int id) {
 		return articleService.getArticle(id);
 	}
+	
+	@RequestMapping("usr/article/doDelete")
+	@ResponseBody
+	public String doDelete(int id) {
+		Article article = articleService.getArticle(id);
+		
+		if(article == null) {
+			return id + "번 게시물은 존재하지 않습니다.";
+		}
+		
+		articleService.delete(id);
+		
+		return id + "번 게시물을 삭제하였습니다."; 
+	}
 }

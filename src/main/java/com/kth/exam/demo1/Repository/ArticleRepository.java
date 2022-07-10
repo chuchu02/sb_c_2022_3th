@@ -39,4 +39,10 @@ public class ArticleRepository {
 		return null;
 	}
 
+	public void delete(int id) {
+		Article article = getArticle(id);
+		
+		articles.remove(article);
+	}
+
 }
