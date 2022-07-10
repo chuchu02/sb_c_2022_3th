@@ -15,8 +15,9 @@ public class ArticleService {
 		this.articleRepository = articleRepository;
 	}
 
-	public void writeArticle(String title, String body) {
+	public int writeArticle(String title, String body) {
 		articleRepository.writeArticle(title, body);
+		return articleRepository.getLastInsertId();
 	}
 
 	public List<Article> getArticles() {
