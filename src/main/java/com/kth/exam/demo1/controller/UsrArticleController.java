@@ -42,4 +42,18 @@ public class UsrArticleController {
 		
 		return id + "번 게시물을 삭제하였습니다."; 
 	}
+	
+	@RequestMapping("usr/article/doModify")
+	@ResponseBody
+	public String doModify(int id, String title, String body) {
+		Article article = articleService.getArticle(id);
+		
+		if(article == null) {
+			return id + "번 게시물은 존재하지 않습니다.";
+		}
+		
+		articleService.modify(id, title, body);
+		
+		return id + "번 게시물을 수정하였습니다."; 
+	}
 }

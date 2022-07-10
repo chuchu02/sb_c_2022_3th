@@ -12,7 +12,7 @@ public class ArticleRepository {
 
 	private List<Article> articles;
 	private int lastId;
-	
+
 	public ArticleRepository() {
 		articles = new ArrayList<>();
 		lastId = 0;
@@ -26,13 +26,13 @@ public class ArticleRepository {
 		int id = lastId + 1;
 		Article article = new Article(id, title, body);
 		articles.add(article);
-		
+
 		lastId = id;
 	}
 
 	public Article getArticle(int id) {
 		for (Article article : articles) {
-			if(article.getId() == id) {
+			if (article.getId() == id) {
 				return article;
 			}
 		}
@@ -41,8 +41,15 @@ public class ArticleRepository {
 
 	public void delete(int id) {
 		Article article = getArticle(id);
-		
+
 		articles.remove(article);
+	}
+
+	public void modify(int id, String title, String body) {
+		Article article = getArticle(id);
+		
+		article.setTitle(title);
+		article.setBody(body);
 	}
 
 }
