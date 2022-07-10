@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.kth.exam.demo1.repository.ArticleRepository;
 import com.kth.exam.demo1.vo.Article;
-import com.kth.exam.demo1.Repository.ArticleRepository;
 
 @Service
 public class ArticleService {
@@ -33,6 +33,6 @@ public class ArticleService {
 	}
 
 	public void modify(int id, String title, String body) {
-		articleRepository.modify(id, title, body);
+		articleRepository.modifyArticle(id, title, body);
 	}
 }

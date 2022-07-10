@@ -1,4 +1,4 @@
-package com.kth.exam.demo1.Repository;
+package com.kth.exam.demo1.repository;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public interface ArticleRepository {
 
 	public void deleteArticle(@Param("id") int id);
 
-	public void modify(@Param("id") int id, @Param("title") String title, @Param("body") String body);
+	public void modifyArticle(@Param("id") int id, @Param("title") String title, @Param("body") String body);
 	
 	public List<Article> getArticles();
 
